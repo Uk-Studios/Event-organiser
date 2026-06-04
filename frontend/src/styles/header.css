@@ -1,0 +1,96 @@
+.custom-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-custom {
+  padding: 24px 0;
+  background: linear-gradient(to bottom, rgba(6, 16, 30, 0.82), rgba(6, 16, 30, 0));
+}
+
+.brand-logo {
+  font-size: 1.75rem !important;
+  font-weight: 700;
+  color: var(--luxury-ivory) !important;
+}
+
+.nav-links a {
+  color: rgba(255, 250, 241, 0.82) !important;
+  margin-left: 24px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--luxury-gold) !important;
+  transform: translateY(-1px);
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(255, 250, 241, 0.24) !important;
+  border-radius: 0 !important;
+  padding: 8px 10px !important;
+}
+
+.luxury-footer {
+  padding: 58px 6vw 34px;
+  background: var(--luxury-navy);
+  border-top: 1px solid rgba(202, 164, 92, 0.22);
+  text-align: center;
+}
+
+.luxury-footer h2 {
+  margin: 0 0 12px;
+  color: var(--luxury-ivory);
+  font-size: 2.6rem;
+}
+
+.luxury-footer p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  color: rgba(250, 245, 235, 0.64);
+  line-height: 1.8;
+}
+
+.luxury-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.luxury-footer a {
+  color: rgba(250, 245, 235, 0.72);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.luxury-footer a:hover {
+  color: var(--luxury-gold);
+}
+
+.luxury-footer small {
+  margin: 0;
+  color: rgba(250, 245, 235, 0.48);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background: rgba(6, 16, 30, 0.97);
+    padding: 18px;
+    border: 1px solid rgba(196, 154, 85, 0.22);
+    margin-top: 15px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}

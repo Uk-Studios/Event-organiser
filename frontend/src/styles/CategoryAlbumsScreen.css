@@ -1,0 +1,157 @@
+.category-page {
+  padding: 140px 0 100px;
+ 
+  min-height: 100vh;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 60px;
+
+  margin-bottom: 40px;
+}
+
+
+.category-left h1 {
+  font-family: "Cormorant Garamond", serif;
+  text-transform: capitalize;
+  font-size: clamp(4rem, 7vw, 6rem);
+  font-weight: 400;
+  color: #cf6449;
+  margin: 0;
+}
+
+
+.category-right {
+  max-width: 320px;
+}
+
+.category-right p {
+  color: #5d6470;
+
+  line-height: 1.9;
+
+  margin-bottom: 18px;
+}
+
+.album-count {
+  color: #0b1731;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.2em;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.category-divider {
+  height: 1px;
+  background: #cf6449;
+  margin-bottom: 70px;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 991px) {
+
+  .category-page {
+    padding: 120px 0 80px;
+  }
+
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    margin-bottom: 30px;
+  }
+
+  .category-left h1 {
+    font-size: clamp(3.2rem, 8vw, 5rem);
+    line-height: 1;
+  }
+
+  .category-right {
+    max-width: 100%;
+  }
+
+  .category-right p {
+    max-width: 600px;
+  }
+
+  .category-divider {
+    margin-bottom: 50px;
+  }
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 576px) {
+
+  .category-page {
+    padding: 100px 0 60px;
+  }
+
+  .category-header {
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .category-left span {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 12px;
+  }
+
+  .category-left h1 {
+    font-size: 2.6rem;
+    line-height: 1.05;
+  }
+
+  .category-right {
+    max-width: 100%;
+  }
+
+  .category-right p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .album-count {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+  }
+
+  .category-divider {
+    margin-bottom: 40px;
+  }
+}
+
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width: 400px) {
+
+  .category-page {
+    padding: 90px 0 50px;
+  }
+
+  .category-left h1 {
+    font-size: 2.2rem;
+  }
+
+  .category-right p {
+    font-size: 0.9rem;
+  }
+}   

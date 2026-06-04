@@ -1,0 +1,253 @@
+/* --- APP VIEWPORT WRAPPER --- */
+.album-page {
+  overflow-x: hidden;
+  color: var(--luxury-ivory, #ffffff); 
+  background-color: #06101e2d;
+}
+
+/* --- FULL VIEWPORT CONTAINER --- */
+.album-viewport-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- THE BACKGROUND FIXED CANVAS --- */
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Deepened gradient overlay system to blend text and floating items safely */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  background: rgba(6, 16, 30, 0.75);
+}
+
+/* --- FLOATING CONTAINER --- */
+.viewport-scroll-container {
+  position: relative;
+  z-index: 3; /* Places elements safely above background imagery */
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 140px 24px 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- TEXT LAYOUT --- */
+.hero-text-content {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 860px;
+}
+
+.hero-text-content h1 {
+  font-size: 5rem;
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--luxury-ivory, #fffaf1);
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 250, 241, 0.76);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* --- SUB-INTRO INTERNALS --- */
+.album-intro-inline {
+  text-align: center;
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+.album-intro-inline p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 250, 241, 0.9);
+}
+
+.intro-line-gold {
+  width: 180px;
+  height: 0.2px;
+  border: 0.2px solid #ffffff;
+  margin: 24px auto 0;
+}
+
+/* --- GALLERY SYSTEM WRAPPER --- */
+.album-gallery-container {
+  width: 100%;
+  padding: 0;
+}
+
+/* --- INDIVIDUAL CARD CONFIGURATION --- */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 5;
+  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 100%; /* Bootstrap handles grid widths, cards should expand to full column allocation */
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease, filter 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(6, 16, 30, 0.8), rgba(6, 16, 30, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay span {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE TYPOGRAPHY & LAYOUT TWEAKS --- */
+@media (max-width: 768px) {
+  .hero-text-content h1 {
+    font-size: 3rem;
+  }
+  .album-intro-inline p {
+    font-size: 1.4rem;
+  }
+  .gallery-item {
+    height: 350px;
+  }
+  
+  /* FIXED: Disables the hover background overlay and "View" text block completely on mobile screens */
+  .gallery-overlay {
+    display: none !important;
+  }
+  
+  /* Optional: Disables the zoom effect on mobile hover/tap if desired */
+  .gallery-item:hover .gallery-image {
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  /* Optional: Disables the lift card translate animation on mobile tap */
+  .gallery-item:hover {
+    transform: none !important;
+  }
+}
+
+/* --- PREMIUM LIGHTBOX POPUP MODAL --- */
+
+/* Restricts layout window bounds to cleanly adapt to the photo format */
+.custom-lightbox-modal {
+  max-width: 85vh !important; /* Forces layout to balance relative to height benchmarks */
+  width: auto;
+  margin: 0 auto;
+}
+
+/* Translucency structure for modal layout body card wrapper */
+.lightbox-content-wrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Isolates and aligns the top right closing 'X' utility button */
+.lightbox-header-clean {
+  border-bottom: none !important;
+  padding: 0 0 10px 0 !important;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Enhances button sizing interaction dynamics */
+.lightbox-header-clean .btn-close {
+  background-size: 1.25rem;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  padding: 10px;
+}
+
+.lightbox-header-clean .btn-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.lightbox-body-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Main target viewport image sizing guidelines */
+.lightbox-preview-img {
+  max-width: 100%;
+  max-height: 80vh; /* Keeps vertical bounds perfectly safe on short screens */
+  object-fit: contain; /* Prevents stretching or cropping your artwork */
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  background-color: #ffffff; /* Provides a clean backdrop for images with transparency */
+}
+
+/* Dim behind the layout background canvas element */
+.modal-backdrop.show {
+  opacity: 0.88 !important;
+  background-color: #030a14 !important;
+}
+
+/* --- HIDE FOOTER SCOPING SYSTEM --- */
+.album-page ~ footer,
+.album-page + footer,
+body:has(.album-page) footer {
+  display: none !important;
+}

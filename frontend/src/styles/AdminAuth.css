@@ -1,0 +1,67 @@
+.admin-auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(242, 199, 110, 0.14), transparent 28%),
+    linear-gradient(135deg, #101828, #182230);
+}
+
+.admin-auth-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24);
+}
+
+.admin-auth-card > span {
+  display: block;
+  color: #667085;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.admin-auth-card h2 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.admin-auth-card p {
+  margin: 0 auto 24px;
+  color: #667085;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.admin-auth-card .form-control {
+  min-height: 46px;
+  border-radius: 10px;
+  border: 1px solid #d9e0ea;
+}
+
+.admin-auth-card .form-control:focus {
+  border-color: #667085;
+  box-shadow: 0 0 0 3px rgba(102, 112, 133, 0.12);
+}
+
+.admin-auth-card .admin-primary-btn {
+  border: 0 !important;
+  border-radius: 10px !important;
+  background: #111827 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.admin-auth-card .admin-primary-btn:hover {
+  background: #1f2937 !important;
+}

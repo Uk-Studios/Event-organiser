@@ -1,0 +1,124 @@
+.album-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.album-card {
+  text-align: center;
+  margin: 14px 20px;
+}
+
+/* ======================
+   STACK
+====================== */
+
+.album-stack {
+  position: relative;
+
+  width: 260px;
+  height: 250px;
+
+  margin: 0 auto 30px;
+}
+
+.stack-card {
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+
+  top: 20px;
+  left: 50%;
+
+  border-radius: 20px;
+
+  border: 4px solid #fff;
+
+  background-size: cover;
+  background-position: center;
+
+  box-shadow:
+    0 15px 30px rgba(0,0,0,.18);
+
+  transition: .5s ease;
+}
+
+.stack-left {
+  transform:
+    translateX(-65%)
+    rotate(-12deg);
+}
+
+.stack-right {
+  transform:
+    translateX(-35%)
+    rotate(12deg);
+
+}
+
+.stack-main {
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%);
+
+  border: 4px solid #fff;
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  z-index: 5;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.22);
+
+  transition: .5s ease;
+}
+
+.stack-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======================
+   HOVER
+====================== */
+
+.album-card:hover .stack-left {
+  transform:
+    translateX(-90%)
+    rotate(-18deg);
+}
+
+.album-card:hover .stack-right {
+  transform:
+    translateX(-10%)
+    rotate(18deg);
+}
+
+.album-card:hover .stack-main {
+  transform:
+    translateX(-50%)
+    translateY(-10px);
+}
+
+/* ======================
+   INFO
+====================== */
+
+
+.album-info p {
+  color: #806b6b;
+
+  margin: auto;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-weight: 300;
+}

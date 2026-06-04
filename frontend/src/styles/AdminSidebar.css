@@ -1,0 +1,93 @@
+.admin-sidebar {
+  width: 280px;
+  min-height: 100vh;
+  background: #101828;
+  color: #ffffff;
+  padding: 24px 18px;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 6px 24px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #f2c76e;
+  color: #101828;
+  font-weight: 900;
+}
+
+.sidebar-logo {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.sidebar-brand p {
+  margin: 2px 0 0;
+  color: #98a2b3;
+  font-size: 0.8rem;
+}
+
+.admin-sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  color: #cbd5e1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.admin-sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.admin-sidebar .nav-link.active {
+  background: #ffffff;
+  color: #101828;
+}
+
+.logout-btn {
+  width: calc(100% - 12px);
+  margin: 28px 6px 0;
+  padding: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+  }
+}

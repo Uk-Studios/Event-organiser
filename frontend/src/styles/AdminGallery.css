@@ -1,0 +1,131 @@
+.admin-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-gallery-card {
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.admin-gallery-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.13);
+}
+
+.admin-gallery-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-gallery-card-body {
+  padding: 20px;
+}
+
+.admin-gallery-card-body span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: #667085;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.admin-gallery-card-body p {
+  min-height: 54px;
+  margin: 0 0 18px;
+  color: #344054;
+  line-height: 1.65;
+}
+
+.gallery-modal-header {
+  align-items: flex-start !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(242, 199, 110, 0.2), transparent 32%),
+    linear-gradient(135deg, #111827, #1f2937);
+  border-bottom: 0 !important;
+  color: #ffffff;
+  padding: 26px 28px !important;
+}
+
+.gallery-modal-header .btn-close {
+  filter: invert(1) grayscale(1);
+  opacity: 0.86;
+}
+
+.gallery-modal-header span {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: #f2c76e;
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.gallery-modal-header .modal-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 900 !important;
+}
+
+.gallery-modal-header p {
+  margin: 8px 0 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.gallery-upload-panel {
+  padding: 16px;
+  margin-bottom: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.gallery-upload-preview {
+  height: 280px;
+  margin-top: 12px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  color: #667085;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.gallery-upload-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .admin-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-gallery-card img,
+  .gallery-upload-preview {
+    height: 230px;
+  }
+}
