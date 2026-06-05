@@ -14,6 +14,8 @@ import albumRoutes from './routes/albumRoutes.js'
 import galleryRoutes from './routes/galleryRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 connectDB()
 
@@ -40,4 +42,20 @@ const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
+})
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const frontendDist = path.join(
+  __dirname,
+  '../frontend/dist'
+)
+
+app.use(express.static(frontendDist))
+
+app.get('*', (req, res) => {
+  res.sendFile(
+    path.join(frontendDist, 'index.html')
+  )
 })
