@@ -31,17 +31,6 @@ app.use('/api/gallery', galleryRoutes)
 
 app.use('/api/upload', uploadRoutes)
 
-app.get('/', (req, res) => {
-  res.send('API Running...')
-})
-
-
-
-const PORT = process.env.PORT || 5000
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -53,7 +42,7 @@ const frontendDist = path.join(
 
 app.use(express.static(frontendDist))
 
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(
     path.join(frontendDist, 'index.html')
   )
@@ -61,3 +50,9 @@ app.get('*', (req, res) => {
 
 app.use(notFound)
 app.use(errorHandler)
+
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
