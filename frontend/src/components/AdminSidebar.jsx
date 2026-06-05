@@ -19,9 +19,9 @@ const AdminSidebar = () => {
     <>
       <div className="admin-sidebar">
         <div className="sidebar-brand">
-          <span>ME</span>
+          <span>UK</span>
           <div>
-            <h3 className="sidebar-logo">Maison</h3>
+            <h3 className="sidebar-logo">Uk Studio</h3>
             <p>Admin Console</p>
           </div>
         </div>
