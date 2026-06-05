@@ -35,8 +35,7 @@ app.get('/', (req, res) => {
   res.send('API Running...')
 })
 
-app.use(notFound)
-app.use(errorHandler)
+
 
 const PORT = process.env.PORT || 5000
 
@@ -59,3 +58,6 @@ app.get('*', (req, res) => {
     path.join(frontendDist, 'index.html')
   )
 })
+
+app.use(notFound)
+app.use(errorHandler)
